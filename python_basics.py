@@ -1,25 +1,68 @@
-def main():
-    project_name = "AI Internship Week 1"
-    tasks_completed = 5
-    is_active = True
+# --- Python Basics ---
+# comments start with a hash
+print("Hello, Triadix OIP") #
 
-    print("--- Variables & Data Types ---")
-    print(f"Project: {project_name} | Tasks Done: {tasks_completed} | Active: {is_active}\n")
-    print("--- Loops & Conditionals ---")
-    for i in range(1, 6):
-        if i % 2 == 0:
-            print(f"Task {i} is an EVEN number task.")
-        else:
-            print(f"Task {i} is an ODD number task.")
-    print("\n--- File Handling ---")
-    file_name = "task_log.txt"
-    with open(file_name, "w") as file:
-        file.write("Week 1 Tasks logged successfully.\n")
-        file.write("Python basics and Git setup complete.")
-    with open(file_name, "r") as file:
-        content = file.read()
-        print("Content read from task_log.txt:")
-        print(content)
+# --- Variables & Data Types ---
+name = "pranab"      # str
+age = 24             # int
+gpa = 8.7            # float
+is_active = True     # bool
+skills = ["Python", "SQL"] # list
+profile = {"role": "Intern"} # dict
 
-if __name__ == "__main__":
-    main()
+# --- Functions ---
+def calculate_average(scores): #
+    return sum(scores) / len(scores) #
+
+result = calculate_average([85, 90, 78]) #
+print(result) # 84.33
+
+def greet(name, greeting="Hello"): #
+    return f"{greeting}, {name}!" #
+
+greet("pranab") # "Hello, pranab!"
+greet("pranab", greeting="Hi") # "Hi, pranab!"
+
+square = lambda x: x ** 2 #
+
+# --- Loops & Conditional Statements ---
+score = 78 #
+if score >= 90: #
+    print("Grade A") #
+elif score >= 75: #
+    print("Grade B") #
+else: #
+    print("Needs Improvement") #
+
+students = ["Aman", "Priya", "Rahul"] #
+for student in students: #
+    print(f"Hello, {student}") #
+
+for i, student in enumerate(students): #
+    print(i, student) #
+
+# --- Object-Oriented Programming (OOP) ---
+class Student: #
+    def __init__(self, name, course): #
+        self.name = name #
+        self.course = course #
+        
+    def introduce(self): #
+        return f"I'm {self.name}, enrolled in {self.course}" #
+
+s1 = Student("arpita", "Gen AI & ML") #
+print(s1.introduce()) #
+
+class InternStudent(Student): # inherits from Student
+    def introduce(self): #
+        return f"{self.name} is interning via Triadix OIP" #
+
+# --- File Handling ---
+# writing to a file
+with open("notes.txt", "w") as f: #
+    f.write("Week 1 complete") #
+
+# reading a file
+with open("notes.txt", "r") as f: #
+    content = f.read() #
+    print(content) #
